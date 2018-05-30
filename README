@@ -1,0 +1,3 @@
+帮朋友做的一个小功能。
+
+mvn exec:java -Dexec.mainClass="com.flatfish.Main"
