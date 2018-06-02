@@ -37,7 +37,7 @@ public class PassExportTask {
             List<String> outputLines = export.exportPassAtToday(machineCode, startHour, url, username, password);
 
             System.out.println("Start output " + LocalDateTime.now());
-            String output = outputSuffix + LocalDate.now().format(DateTimeFormatter.ofPattern("YYYYMMdd")) + ".txt";
+            String output = outputSuffix + LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd")) + "_" + machineCode + ".txt";
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(output))));
             for (String line : outputLines) {
                 out.write(line);
@@ -71,7 +71,7 @@ public class PassExportTask {
             List<String> outputLines = export.exportPass(machineCode, startTime, endTime, url, username, password);
 
             System.out.println("Start output " + LocalDateTime.now());
-            String output = outputSuffix + LocalDate.now().format(DateTimeFormatter.ofPattern("YYYYMMdd")) + ".txt";
+            String output = outputSuffix + LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd")) + "_" + machineCode + ".txt";
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(output))));
             for (String line : outputLines) {
                 out.write(line);
